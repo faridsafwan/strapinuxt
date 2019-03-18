@@ -8,7 +8,7 @@
             <a href="#" class="nav-link">Hello {{ username }}</a>
           </li>
           <li v-if="username">
-            <a href="#" class="nav-link" @click="logout">Logout</a>
+            <a href="/" class="nav-link" @click="logout">Logout</a>
           </li>
           <li v-if="!username">
             <router-link v-if="!username" tag="a" class="nav-link" to="/signin" exact>Signin</router-link>

@@ -10,7 +10,7 @@
               <p class="card-text">{{ numberOfItems }} items selected:</p>
               <ul>
                 <li v-for="dish in selectedDishes" :key="dish.id" class="card-text mb-2">
-                  Name: {{ dish.name }} (${{ dish.price }}) ({{ dish.quantity }})
+                  Name: {{ dish.name }} (RM{{ dish.price }}) ({{ dish.quantity }})
                   <button
                     class="btn btn-sm btn-success"
                     @click="addToCart(dish)"
@@ -18,7 +18,7 @@
                   <button class="btn btn-sm btn-warning ml-2" @click="removeFromCart(dish)">-</button>
                 </li>
               </ul>
-              <h5 class="card-text">Total: ${{ price }}</h5>
+              <h5 class="card-text">Total: RM{{ price }}</h5>
               <p v-if="!selectedDishes.length">Please select some items.</p>
             </div>
           </div>
@@ -61,7 +61,7 @@
               />
             </div>
             <div class="form-group">
-              <label for="card">Card</label>
+              <label for="card">Shopping Cart</label>
               <card class="form-control" stripe="pk_test_odwpVQbrXfbfUwdjArLD7yYD"/>
             </div>
             <button :disabled="loading" type="submit" class="btn btn-primary btn-block mt-3">Submit</button>
